@@ -66,6 +66,7 @@ def getFeatureMatrix(reviewsFeatures, featureVector) :
 	for reviewFeature in reviewsFeatures :
 		reviewVector = [] 
 		for word in featureVector :
+			#reviewVector.append(reviewFeature.count(word))
 			if word in reviewFeature :
 				reviewVector.append(1)
 			else : 
