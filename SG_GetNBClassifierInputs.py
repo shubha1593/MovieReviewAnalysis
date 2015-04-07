@@ -1,11 +1,13 @@
-from SG_GetFeatureMatrix import *
-from SG_VectorY import *
-import numpy, scipy.io
+from SG_GetDataForClassifier import *
+import scipy.io
 
-featureMatrix = numpy.array(featureMatrixFromReviews())
-Y = numpy.array(getYVector())
+trainingSet, trainingY = getTrainingData()
+testSet, testY = getTestData()
 
-scipy.io.savemat('Output/featureMatrix.mat', mdict={'featureMatrix' : featureMatrix})
-scipy.io.savemat('Output/Y.mat', mdict={'Y' : Y})
+#trainingSet_m = numpy.array(trainingSet)
+#trainingY_m = numpy.array(trainingY)
 
-
+scipy.io.savemat('Output/TrainingSet.mat', mdict={'trainingSet' : trainingSet})
+scipy.io.savemat('Output/TrainingY.mat', mdict={'trainingY' : trainingY})
+scipy.io.savemat('Output/TestSet.mat', mdict={'testSet' : testSet})
+scipy.io.savemat('Output/TestY.mat', mdict={'testY' : testY})
