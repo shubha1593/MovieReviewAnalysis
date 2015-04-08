@@ -50,3 +50,13 @@ PredictedClass = predict(nb, TestSet);
 fid = fopen('/Users/Shubha/Learn/MovieReviewAnalysis/Output/PredictedClassNB.txt', 'wt');
 fprintf(fid,'%d\n',PredictedClass);
 fclose(fid);
+
+%{
+    Okay now let's check the accuracy of our classifier
+    Confusion Matrix : http://in.mathworks.com/help/stats/confusionmat.html
+ 
+    Accuracy of Naive Bayes on this dataset : 82.50%
+%}
+confusion_matrix = confusionmat(ActualClass, PredictedClass);
+accuracy = 100*sum(diag(confusion_matrix))./sum(confusion_matrix(:));
+fprintf('Naive Bayes Classifier Accuracy : %.2f%%\n', accuracy);
