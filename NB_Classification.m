@@ -1,18 +1,16 @@
-%{
- Load the Training Data : 
-    Training Set : 1800 x 2012 (of type int64)
-    Training Y : 1 X 1800 (of type int64)
-%}
-load('/Users/Shubha/Learn/MovieReviewAnalysis/Output/TrainingSet.mat');
-load('/Users/Shubha/Learn/MovieReviewAnalysis/Output/TrainingY.mat');
+% Call PrepareTrainAndTestSet script to get Training and Test data 
+PrepareTrainAndTestSet;
 
 %{
- Load the Test Data : 
-    Test Set : 200 x 2012 (of type int64)
-    Test Y : 1 x 2012 (of type int64)
+ Training Data : 
+    Training Set : 1600 x 2477 (of type int64)
+    Training Y : 1 X 1600 (of type int64)
+
+ Test Data : 
+    Test Set : 400 x 2477 (of type int64)
+    Test Y : 1 x 400 (of type int64)
 %}
-load('/Users/Shubha/Learn/MovieReviewAnalysis/Output/TestSet.mat');
-load('/Users/Shubha/Learn/MovieReviewAnalysis/Output/TestY.mat');
+
 
 %{
     Take transpose of Y as each row should indicate the class of
