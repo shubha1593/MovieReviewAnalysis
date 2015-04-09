@@ -56,8 +56,9 @@ def getReviewsWordsList(reviewsFeatures) :
 def buildFeatureVector(reviewsWordList) :
 	validWords = getWordDict()
 	validWordsList = validWords.keys()
-	featureVector = list(set(reviewsWordList) & set(validWordsList))
-
+	#featureVector = list(set(reviewsWordList) & set(validWordsList))
+	featureVector = validWordsList
+	
 	return featureVector
 
 
