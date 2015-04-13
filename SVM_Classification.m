@@ -1,6 +1,3 @@
-% Call PrepareTrainAndTestSet script to get Training and Test data 
-PrepareTrainAndTestSet;
-
 %{
     Classify using Support Vector Machine Classifier
 %}

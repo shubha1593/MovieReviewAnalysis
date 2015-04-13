@@ -1,6 +1,3 @@
-% Call PrepareTrainAndTestSet script to get Training and Testing data 
-PrepareTrainAndTestSet;
-
 %{
     Classify using Naive Bayes Classifier
     Using Multinomial Mode (mn) as was getting error :
