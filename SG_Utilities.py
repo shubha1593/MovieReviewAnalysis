@@ -16,6 +16,12 @@ def readFileInList (filename, separator):
     contentList = contents.split(separator)
     return contentList
 
+def getReviewsWordsList(reviewsFeatures) : 
+	wordListObject = itertools.chain(*reviewsFeatures)
+	reviewsWordList = list(wordListObject)
+	uniqueReviewsWordList = list(set(reviewsWordList))
+
+	return uniqueReviewsWordList
 
 def getWordDict() :
 	afinn = dict(map(lambda (k,v): (k,int(v)), [ line.split('\t') for line in open("Input/AFINN/AFINN-111.txt") ]))

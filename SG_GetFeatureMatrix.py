@@ -45,15 +45,8 @@ def getReviewsFeatures(reviews) :
 	return reviewsFeatures
 
 
-def getReviewsWordsList(reviewsFeatures) : 
-	wordListObject = itertools.chain(*reviewsFeatures)
-	reviewsWordList = list(wordListObject)
-	uniqueReviewsWordList = list(set(reviewsWordList))
 
-	return uniqueReviewsWordList
-
-
-def buildFeatureVector(reviewsWordList) :
+def buildFeatureVector() :
 	validWords = getWordDict()
 	validWordsList = validWords.keys()
 	#featureVector = list(set(reviewsWordList) & set(validWordsList))
@@ -84,9 +77,7 @@ def featureMatrixFromReviews() :
 	reviewsFeatures = getReviewsFeatures(reviews)
 	writeListToFile('Output/ReviewsFeatures.txt', reviewsFeatures)
 
-	reviewsWordList = getReviewsWordsList(reviewsFeatures)
-
-	featureVector = buildFeatureVector(reviewsWordList)
+	featureVector = buildFeatureVector()
 	writeListToFile('Output/FeatureVector.txt', featureVector)
 
 	featureMatrix = getFeatureMatrix(reviewsFeatures, featureVector)
