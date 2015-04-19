@@ -3,10 +3,10 @@ import itertools
 from SG_Utilities import *
 from SG_PreprocessReviews import *
 
-def replaceTwoOrMore(word):
-	#look for 2 or more repetitions of character and replace with the character itself
-	pattern = re.compile(r"(.)\1{1,}", re.DOTALL)
-	return pattern.sub(r"\1\1", word)
+# def replaceTwoOrMore(word):
+# 	#look for 2 or more repetitions of character and replace with the character itself
+# 	pattern = re.compile(r"(.)\1{1,}", re.DOTALL)
+# 	return pattern.sub(r"\1\1", word)
 
 def getStopWordList(filename):
 	#read the stopWords file and build a list
@@ -21,7 +21,7 @@ def getFeatures (review, stopWords):
 	words = review.split()
 	for w in words:
 		#replace two or more with two occurrences
-		w = replaceTwoOrMore(w)
+		#w = replaceTwoOrMore(w)
 		#strip punctuation
 		w = w.strip('\'\"?,\.-!:')
 		#strip numbers at the end
