@@ -6,3 +6,6 @@ NB_Classification
 
 % Classify using SVM
 SVM_Classification
+
+% Classify using Neural Network
+NN_Classification
